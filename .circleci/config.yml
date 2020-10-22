@@ -13,7 +13,8 @@ docker_auth: &docker_auth
 defaults: &defaults
   docker:
     - image: greenpeaceinternational/p4-builder:latest
-      auth: &docker_auth
+      auth:
+        <<: *docker_auth
 
 orbs:
   slack: circleci/slack@3.4.2
@@ -48,7 +49,7 @@ job_environments:
     WP_STATELESS_BUCKET: planet4-ummah-stateless-release
   production_environment: &production_environment
     APP_HOSTNAME: ummah4earth.org
-    APP_HOSTPATH:
+    APP_HOSTPATH: 
     CLOUDSQL_INSTANCE: planet4-prod
     GCLOUD_CLUSTER: planet4-production
     GOOGLE_PROJECT_ID: planet4-production
