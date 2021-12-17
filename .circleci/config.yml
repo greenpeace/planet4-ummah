@@ -31,7 +31,6 @@ job_environments:
     GCLOUD_CLUSTER: p4-development
     HELM_NAMESPACE: develop
     HELM_RELEASE: planet4-ummah
-    NEWRELIC_APPNAME: P4 ummah Development
     WP_DB_NAME: planet4-ummah_wordpress_develop
     WP_STATELESS_BUCKET: planet4-ummah-stateless-develop
   release_build_env: &release_build_env
@@ -45,7 +44,6 @@ job_environments:
     GOOGLE_PROJECT_ID: planet4-production
     HELM_NAMESPACE: ummah
     HELM_RELEASE: planet4-ummah-release
-    NEWRELIC_APPNAME: P4 ummah Release
     WP_DB_NAME: planet4-ummah_wordpress_release
     WP_STATELESS_BUCKET: planet4-ummah-stateless-release
   production_environment: &production_environment
@@ -57,7 +55,6 @@ job_environments:
     HELM_NAMESPACE: ummah
     HELM_RELEASE: planet4-ummah-master
     MIN_REPLICA_COUNT: 2
-    NEWRELIC_APPNAME: P4 ummah Production
     WP_DB_NAME: planet4-ummah_wordpress_master
     WP_STATELESS_BUCKET: planet4-ummah-stateless
 
