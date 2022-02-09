@@ -34,7 +34,7 @@ job_environments:
     WP_DB_NAME: planet4-ummah_wordpress_develop
     WP_STATELESS_BUCKET: planet4-ummah-stateless-develop
     INGRESS_TLS: true
-    INGRESS_NOTTLS: false
+    INGRESS_NOTLS: false
   release_build_env: &release_build_env
     GOOGLE_PROJECT_ID: planet4-production
   release_environment: &release_environment
@@ -49,7 +49,7 @@ job_environments:
     WP_DB_NAME: planet4-ummah_wordpress_release
     WP_STATELESS_BUCKET: planet4-ummah-stateless-release
     INGRESS_TLS: true
-    INGRESS_NOTTLS: false
+    INGRESS_NOTLS: false
   production_environment: &production_environment
     APP_HOSTNAME: ummah4earth.org
     APP_HOSTPATH: 
@@ -62,7 +62,7 @@ job_environments:
     WP_DB_NAME: planet4-ummah_wordpress_master
     WP_STATELESS_BUCKET: planet4-ummah-stateless
     INGRESS_TLS: true
-    INGRESS_NOTTLS: false
+    INGRESS_NOTLS: false
 
 commands:
   approve_job:
