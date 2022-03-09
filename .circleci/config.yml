@@ -35,6 +35,7 @@ job_environments:
     WP_STATELESS_BUCKET: planet4-ummah-stateless-develop
     INGRESS_TLS: true
     INGRESS_NOTLS: false
+    GIT_REF: update-wpml-planet-6662
   release_build_env: &release_build_env
     GOOGLE_PROJECT_ID: planet4-production
   release_environment: &release_environment
