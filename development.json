@@ -1,6 +1,6 @@
 {
   "require": {
-    "greenpeace/planet4-master-theme" : "dev-debug-wpml-data"
+    "greenpeace/planet4-plugin-gutenberg-blocks" : "dev-debug-wpml-data"
   },
   "extra": {
     "wp-version": "5.9.1"
