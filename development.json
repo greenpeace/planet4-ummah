@@ -1,8 +1,0 @@
-{
-  "require": {
-    "greenpeace/planet4-plugin-gutenberg-blocks" : "dev-prevent-wpml-bad-filter"
-  },
-  "extra": {
-    "wp-version": "5.9.1"
-  }
-}
