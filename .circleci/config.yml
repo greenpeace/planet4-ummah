@@ -18,7 +18,6 @@ defaults: &defaults
 
 orbs:
   slack: circleci/slack@3.4.2
-
 job_environments:
   common_environment: &common_environment
     CONTAINER_PREFIX: planet4-ummah
@@ -33,9 +32,6 @@ job_environments:
     HELM_RELEASE: planet4-ummah
     WP_DB_NAME: planet4-ummah_wordpress_develop
     WP_STATELESS_BUCKET: planet4-ummah-stateless-develop
-    INGRESS_TLS: true
-    INGRESS_NOTLS: false
-    GIT_REF: update-wpml-planet-6662
   release_build_env: &release_build_env
     GOOGLE_PROJECT_ID: planet4-production
   release_environment: &release_environment
@@ -49,11 +45,9 @@ job_environments:
     HELM_RELEASE: planet4-ummah-release
     WP_DB_NAME: planet4-ummah_wordpress_release
     WP_STATELESS_BUCKET: planet4-ummah-stateless-release
-    INGRESS_TLS: true
-    INGRESS_NOTLS: false
   production_environment: &production_environment
     APP_HOSTNAME: ummah4earth.org
-    APP_HOSTPATH: 
+    APP_HOSTPATH:
     CLOUDSQL_INSTANCE: planet4-prod
     GCLOUD_CLUSTER: planet4-production
     GOOGLE_PROJECT_ID: planet4-production
@@ -62,8 +56,7 @@ job_environments:
     MIN_REPLICA_COUNT: 2
     WP_DB_NAME: planet4-ummah_wordpress_master
     WP_STATELESS_BUCKET: planet4-ummah-stateless
-    INGRESS_TLS: true
-    INGRESS_NOTLS: false
+
 
 commands:
   approve_job:
@@ -154,12 +147,6 @@ job_definitions:
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
-      - restore_cache:
-          keys:
-            - composer-v5-{{ .Branch }}-{{ .Revision }}-{{ .BuildNum }}
-            - composer-v5-{{ .Branch }}-{{ .Revision }}
-            - composer-v5-{{ .Branch }}
-            - composer-v5
       - run: |
           if [[ -d source/cache ]]; then ls -al source/cache; fi
       - run: activate-gcloud-account.sh
@@ -174,10 +161,6 @@ job_definitions:
       - run: make persist
       - run: make build
       - run: make push
-      - save_cache:
-          key: composer-v5-{{ .Branch }}-{{ .Revision }}-{{ .BuildNum }}
-          paths:
-            - source/cache
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
