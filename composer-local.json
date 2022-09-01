@@ -1,17 +1,17 @@
 {
-    "name": "greenpeace/planet4-ummah",
-    "description": "Greenpeace P4 ummah",
-    "license": "MIT",
-    "require": {
-        "greenpeace/planet4-child-theme-ummah" : "dev-main",
-        "wpackagist-plugin/leadin": "8.*",
-        "plugins/sitepress-multilingual-cms": "*",
-        "plugins/wpml-string-translation": "*"
-    },
-    "scripts": {
-        "core:language": "wp language core install ar; wp language core activate ar",
-        "site:custom": [
-            "@core:language"
-        ]
-    }
+  "name": "greenpeace/planet4-ummah",
+  "description": "Greenpeace P4 ummah",
+  "license": "MIT",
+  "require": {
+    "greenpeace/planet4-child-theme-ummah" : "dev-main",
+    "wpackagist-plugin/leadin": "9.0.35",
+    "plugins/sitepress-multilingual-cms": "*",
+    "plugins/wpml-string-translation": "*"
+  },
+  "scripts": {
+    "core:language": "wp language core install ar; wp language core activate ar",
+    "site:custom": [
+      "@core:language"
+    ]
+  }
 }
