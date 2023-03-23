@@ -4,7 +4,6 @@
   "license": "MIT",
   "require": {
     "greenpeace/planet4-child-theme-ummah" : "dev-main",
-    "wpackagist-plugin/leadin": "9.0.*",
     "plugins/gravityformshubspot": "*",
     "plugins/sitepress-multilingual-cms": "*",
     "plugins/wpml-string-translation": "*"
